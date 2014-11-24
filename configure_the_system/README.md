@@ -68,4 +68,46 @@ usermod -d /opt/USERNAME -m USERNAME
 ```
 [More info](https://superuser.com/questions/40450/how-does-one-change-users-home-directory-in-ubuntu-9-04)
 
+### Move /var to the SD card
 
+Install rsync:
+
+```
+sudo apt-get install rsync
+```
+
+Copy var into /opt
+
+```
+sudo rsync -aP /var /opt/
+```
+
+Set up the mount point by adding the following to `/etc/fstab`:
+
+```
+/opt/var /var none bind
+```
+
+Test the mount point:
+
+```
+sudo mount /var
+mount
+
+```
+
+And verify that the mount succeeds and that the output from mount indicates that /opt/var is mounted on /var
+
+The scary part: unmount /var and remove the underlying contents. This is the step which actually frees up space on the filesystem:
+
+```
+sudo umount /var
+cd /var
+sudo rm -rf *
+```
+
+Now reboot. Running linux without anything in /var for a long period of time is not a good idea.
+
+```
+sudo reboot
+```
