@@ -68,6 +68,14 @@ usermod -d /opt/USERNAME -m USERNAME
 ```
 [More info](https://superuser.com/questions/40450/how-does-one-change-users-home-directory-in-ubuntu-9-04)
 
+Give the user sudo access:
+
+```
+adduser USERNAME admin
+```
+
+This is not strictly necessary but is likely desired. 
+
 ### Move /var to the SD card
 
 Install rsync:
