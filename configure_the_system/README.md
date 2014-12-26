@@ -110,8 +110,7 @@ The scary part: unmount /var and remove the underlying contents. This is the ste
 
 ```
 sudo umount /var
-cd /var
-sudo rm -rf *
+sudo rm -rf /var/*
 ```
 
 Now reboot. Running linux without anything in /var for a long period of time is not a good idea.
