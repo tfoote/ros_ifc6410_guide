@@ -118,3 +118,7 @@ Now reboot. Running linux without anything in /var for a long period of time is 
 ```
 sudo reboot
 ```
+### Repeat for other large directories if necessary. 
+
+In testing a larger ROS stack even the system dependencies in /usr can run out of space on the drive.
+Other high value targets for moving to the SD card are /usr/share and /usr/lib.
