@@ -40,41 +40,16 @@ We will also want our home directory to be on the larger disk. We will use USERN
 
 Create the user
 ```
-adduser USERNAME
+adduser USERNAME --home /opt/USERNAME
 ```
 
 You will probably want to give your user admin access
 
 ```
-adduser USERNAME sudo
-```
-
-Create /opt/USERNAME
-
-```
-mkdir /opt/USERNAME
-```
-
-Give it to the user:
-
-```
-chown -R USERNAME:USERNAME /opt/USERNAME
-```
-
-Update the user settings:
-
-```
-usermod -d /opt/USERNAME -m USERNAME
-```
-[More info](https://superuser.com/questions/40450/how-does-one-change-users-home-directory-in-ubuntu-9-04)
-
-Give the user sudo access:
-
-```
 adduser USERNAME admin
 ```
 
-This is not strictly necessary but is likely desired. 
+This is not strictly necessary but is likely desired.
 
 ### Move /var to the SD card
 
@@ -118,7 +93,7 @@ Now reboot. Running linux without anything in /var for a long period of time is 
 ```
 sudo reboot
 ```
-### Repeat for other large directories if necessary. 
+### Repeat for other large directories if necessary.
 
 In testing a larger ROS stack even the system dependencies in /usr can run out of space on the drive.
 Other high value targets for moving to the SD card are /usr/share and /usr/lib.
