@@ -8,6 +8,8 @@ The IFC6410 has 4 GB of disk space but after all the various required system dir
 
 To make more space available it is suggested to use a MicroSD card to expand available disk space.
 
+There are instructions for putting the whole OS on the SD card, however those instructions have not been shown to be effective and have been discouraged on forums.
+
 ### Install the SD card
 
 Put a >4GB SD card into the board formatted as ext4.
@@ -20,7 +22,7 @@ Edit /etc/fstab and add the following line:
 
 
 ```
-/dev/mmcblk1p1 /opt ext4 defaults
+echo "/dev/mmcblk1p1 /opt ext4 defaults" | sudo tee -a /etc/fstab
 ```
 
 This assumes that you have formatted the microSD card as a single partition.
@@ -68,32 +70,47 @@ sudo rsync -aP /var /opt/
 Set up the mount point by adding the following to `/etc/fstab`:
 
 ```
-/opt/var /var none bind
+echo "/opt/var /var none bind" | sudo tee -a /etc/fstab
 ```
 
-Test the mount point:
+Remove the old data
 
 ```
-sudo mount /var
-mount
-
-```
-
-And verify that the mount succeeds and that the output from mount indicates that /opt/var is mounted on /var
-
-The scary part: unmount /var and remove the underlying contents. This is the step which actually frees up space on the filesystem:
-
-```
-sudo umount /var
 sudo rm -rf /var/*
 ```
 
-Now reboot. Running linux without anything in /var for a long period of time is not a good idea.
+Now mount the directory in the new location
 
 ```
-sudo reboot
+sudo mount /var
 ```
-### Repeat for other large directories if necessary.
 
-In testing a larger ROS stack even the system dependencies in /usr can run out of space on the drive.
-Other high value targets for moving to the SD card are /usr/share and /usr/lib.
+### Move /usr to the uSD card
+
+WARNING: This will require a immediate reboot, the computer will become non-operational until rebooted when /usr is moved below.
+
+Copy /usr into /opt
+
+```
+sudo rsync -aP /usr /opt/
+```
+
+Create the new mount point
+
+```
+echo "/opt/usr /usr none bind" | sudo tee -a /etc/fstab
+```
+
+Move the current /usr directory to a new location so we can clean it up later.
+
+```
+sudo mv /usr /usr.bak
+```
+
+HARD Reboot!
+
+Assuming this came up
+
+```
+sudo rm -rf /usr.bak
+```
