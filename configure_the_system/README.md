@@ -114,3 +114,28 @@ Assuming this came up
 ```
 sudo rm -rf /usr.bak
 ```
+
+# Misc Tuning advice
+
+These are some tips for making the system work better.
+
+## Remove hardcoded ethernet address
+
+The hardcoded ethernet settings are necessary for the developer edition, but get in the way of the full gnome version with an active network manager.
+
+Comment out the following lines in `/etc/network/interfaces`
+```
+#auto eth0
+#iface eth0 inet dhcp
+```
+
+[Forum Thread](http://mydragonboard.org/community/hw-sw-8064/ifc6410-bsp-1-3-does-not-sutdown-eth0-interface-when-ethernet-cable-is-unplugged/)
+
+
+## Fix ping permissions
+
+My default ping requires sudo:
+
+```
+sudo chmod u+s `which ping`
+```
