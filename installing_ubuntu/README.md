@@ -6,20 +6,14 @@ You will need to start by installing Ubuntu on your machine. There is a linaro b
 
 http://releases.linaro.org/14.05/ubuntu/ifc6410
 
-Or use BSP 1.0 from Inforce.
-
-(Don't use newer Linaro builds; the SD card support is broken, see the [Discussion Forum Post](http://mydragonboard.org/community/hw-sw-8064/sd-card-support-in-linaro-14-09-on-ifc6410/) )
-BSP 1.1 and BSP 1.2 have been tested as not working.
-Likewise at least through Linaro build 14.10 does not work either. 
-
 This is great except that to use the board successfully you will need the proprietary firmware from [InForce's TechWeb](http://www.inforcecomputing.com/techweb/).
 
 
 The instructions from Linaro tell how to overlay the firmware onto your image.
 Inforce also provides a fully baked image available from the TechWeb website.
-For simplicity it's recommended to pull BSP 1.0 from the Linaro TechWeb site.
+For simplicity it's recommended to pull BSP 1.3 from the Linaro TechWeb site.
 It will include the images already built.
-There is also a PDF guide for installing with these instructions in the BSP. 
+There is also a PDF guide for installing with these instructions in the BSP.
 
 Unfortunately it requires registration to get access to the TechWeb site.
 
@@ -30,7 +24,8 @@ There are more details on most of this process on the [Linaro landing page](http
 
 You will need to flash the images onto the board using fastboot.
 
-To get the board into fastbook you need to jumper pins 30 to 25 on the largest connector. Detalis with pictures [in this article](http://mydragonboard.org/2013/forcing-ifc6410-into-fastboot/).
+To get the board into fastbook you need to jumper pins 30 to 25 on the largest connector.
+Details with pictures [in this article](http://mydragonboard.org/2013/forcing-ifc6410-into-fastboot/).
 
 
 ```
