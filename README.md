@@ -20,7 +20,7 @@ However if you are interested in doing more than is exactly outlined here we sug
   * Open source builds (still requires binary drivers see Techweb below)
   * 14.05 currently recommended due to SD card issues in 14.10. 
  * [Inforce Computing product page](http://www.inforcecomputing.com/products/moreinfo/inforce6410.html)
- * [inforce Computing Techweb](http://www.inforcecomputing.com/techweb/index.ph) Registration requried.
+ * [inforce Computing Techweb](http://www.inforcecomputing.com/techweb/index.php) Registration requried.
   * The source for binary hardware drivers. 
   * Also redistributes full images from Linaro with the binary releases built in. 
 
