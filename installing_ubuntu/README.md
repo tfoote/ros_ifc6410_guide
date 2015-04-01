@@ -43,6 +43,10 @@ More documentation of this process can be found on the linaro page.
 
 Remove the jumper and reboot the machine now. It should give you a login prompt.
 
+I recommend having an ethernet cable plugged in for the first boot so that it can pick up the date from the network.
+If you do not it will have a date in 1979 and several things will fail such as SSL certificates.
+Once the date is set correctly you will be fine again. 
+
 There's a default user linaro:linaro.
 
 And tty1 will autologin as root.
