@@ -16,4 +16,6 @@ http://wiki.ros.org/indigo/Installation/UbuntuARM
     sudo gem install puppet --no-rdoc --no-ri
     # install the ros puppet module
     sudo puppet module install tfoote-ros
+    # execute the puppet module
+    sudo puppet apply -e "include ros"
     
