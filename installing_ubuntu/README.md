@@ -22,18 +22,29 @@ There are more details on most of this process on the [Linaro landing page](http
 
 ### Flash the OS onto the device
 
-You will need to flash the images onto the board using fastboot.
+You will need to flash the images onto the board using fastboot. 
 
-To get the board into fastbook you need to jumper pins 30 to 25 on the largest connector.
+To get the board into fastbook you need to jumper pins 30 to 26 on the largest connector.
 Details with pictures [in this article](http://mydragonboard.org/2013/forcing-ifc6410-into-fastboot/).
 
+After adding the jumper plug in the USB and the DC power. You should see multiple LEDs. (USB slave power is not enough, some LEDs will turn on but the board won't boot.)
+
+You will want to install `android-tools-fastboot`
+
+If the device is available in fastboot mode `sudo fastboot devices` will list the device.
+
+To flash the devices use the following commands. 
+
+The images are contained in the BSP 1.3 downloaded from Inforce, they already contain the proprietary firmware. You do not need to follow the Linaro instructions for inserting them into the images. 
 
 ```
-sudo fastboot flash boot boot-ifc6410-20140526-15.img
-sudo fastboot flash cache firmware-ifc6410-20140526-15.img
-sudo fastboot flash -S 768M userdata linaro-trusty-gnome-ifc6410-20140526-15.img
+sudo fastboot flash boot linaro_1410_boot.img
+sudo fastboot flash cache firmware-ifc6410-20141024-37.img
+sudo fastboot flash -S 768M userdata linaro-trusty-gnome-ifc6410-20141024-37.img
 sudo fastboot reboot
 ```
+
+Note: flashing the userdata will take a few minutes. 
 
 #### Prereqisites.
 More documentation of this process can be found on the linaro page.
