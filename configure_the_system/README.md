@@ -36,22 +36,7 @@ chmod o+x /opt
 ```
 
 
-### Create a user accont with a home directory in /opt
 
-We will also want our home directory to be on the larger disk. We will use USERNAME as the standing for your perferred username.
-
-Create the user
-```
-adduser USERNAME --home /opt/USERNAME
-```
-
-You will probably want to give your user admin access
-
-```
-adduser USERNAME admin
-```
-
-This is not strictly necessary but is likely desired.
 
 ### Move /var to the SD card
 
@@ -85,6 +70,32 @@ Now mount the directory in the new location
 sudo mount /var
 ```
 
+### Move /home to the uSD card
+
+Copy home into /opt
+
+```
+sudo rsync -aP /home /opt/
+```
+
+Set up the mount point by adding the following to `/etc/fstab`:
+
+```
+echo "/opt/home /home none bind" | sudo tee -a /etc/fstab
+```
+
+Remove the old data
+
+```
+sudo rm -rf /home/*
+```
+
+Now mount the directory in the new location
+
+```
+sudo mount /home
+```
+
 ### Move /usr to the uSD card
 
 WARNING: This will require a immediate reboot, the computer will become non-operational until rebooted when /usr is moved below.
@@ -114,6 +125,22 @@ Assuming this came up
 ```
 sudo rm -rf /usr.bak
 ```
+### Create a user accont to use
+
+We will also want our home directory to be on the larger disk. We will use USERNAME as the standing for your perferred username.
+
+Create the user
+```
+adduser USERNAME
+```
+
+You will probably want to give your user admin access
+
+```
+adduser USERNAME admin
+```
+
+This is not strictly necessary but is likely desired.
 
 # Misc Tuning advice
 
