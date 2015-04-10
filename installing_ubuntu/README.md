@@ -4,7 +4,7 @@
 
 You will need to start by installing Ubuntu on your machine. There is a linaro build for IFC6410
 
-http://releases.linaro.org/14.05/ubuntu/ifc6410
+[http://releases.linaro.org/14.05/ubuntu/ifc6410](http://releases.linaro.org/14.05/ubuntu/ifc6410)
 
 This is great except that to use the board successfully you will need the proprietary firmware from [InForce's TechWeb](http://www.inforcecomputing.com/techweb/).
 
