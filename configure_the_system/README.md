@@ -18,7 +18,7 @@ Put a >4GB SD card into the board formatted as ext4.
 
 We will wand the microSD card to be mounted in /opt to enable the installation of many ROS packages from debian packages.
 
-Edit /etc/fstab and add the following line:
+Run the following command to add a line to `/etc/fstab`. 
 
 
 ```
@@ -32,7 +32,7 @@ Reboot to make sure it's all installed
 Make /opt browsable.
 
 ```
-chmod o+x /opt
+sudo chmod o+x /opt
 ```
 
 
@@ -96,6 +96,12 @@ Now mount the directory in the new location
 sudo mount /home
 ```
 
+If you're in the user directory. It will have moved underneath you. This will avoid cwd issues.
+
+```
+cd .
+```
+
 ### Move /usr to the uSD card
 
 WARNING: This will require a immediate reboot, the computer will become non-operational until rebooted when /usr is moved below.
@@ -118,9 +124,12 @@ Move the current /usr directory to a new location so we can clean it up later.
 sudo mv /usr /usr.bak
 ```
 
-HARD Reboot!
+#### HARD Reboot!
 
-Assuming this came up
+With usr moved from it's usual place your installation will not operate. You will need to hard powercycle to wait for `/usr` to be remounted on reboot.
+
+
+Assuming this came up lets clean up the old copy of /usr:
 
 ```
 sudo rm -rf /usr.bak
@@ -131,13 +140,13 @@ We will also want our home directory to be on the larger disk. We will use USERN
 
 Create the user
 ```
-adduser USERNAME
+sudo adduser USERNAME
 ```
 
 You will probably want to give your user admin access
 
 ```
-adduser USERNAME admin
+sudo adduser USERNAME admin
 ```
 
 This is not strictly necessary but is likely desired.
