@@ -5,7 +5,6 @@
 
 You will need to start by installing Ubuntu on your machine.
 
-
 For reference There is a linaro build for IFC6410
 
 [http://releases.linaro.org/14.05/ubuntu/ifc6410](http://releases.linaro.org/14.05/ubuntu/ifc6410)
