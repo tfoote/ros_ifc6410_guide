@@ -6,7 +6,7 @@ This is a GitBook the source is hosted on GitHub. If you'd like to make a contri
 
 The book is registered to be automatically built and made available at: http://tfoote.gitbooks.io/a-guide-to-using-ros-on-the-ifc6410/
 
-The current build status is: [![Build Status](https://www.gitbook.io/button/status/book/tfoote/a-guide-to-using-ros-on-the-ifc6410)](https://www.gitbook.io/book/tfoote/a-guide-to-using-ros-on-the-ifc6410/activity)
+The current build status is: [![Build Status](https://www.gitbook.com/button/status/book/tfoote/a-guide-to-using-ros-on-the-ifc6410)](https://www.gitbook.com/book/tfoote/a-guide-to-using-ros-on-the-ifc6410/activity)
 
 ## Other resources
 
