@@ -45,7 +45,6 @@ To flash the devices use the following commands from inside the extracted BSP.
 sudo fastboot flash boot linaro_1410_boot.img
 sudo fastboot flash cache firmware-ifc6410-20141024-37.img
 sudo fastboot flash -S 768M userdata linaro-trusty-gnome-ifc6410-20141024-37.img
-sudo fastboot reboot
 ```
 
 Note: flashing the userdata will take a few minutes.
@@ -56,7 +55,13 @@ More documentation of this process can be found on the linaro page.
 
 ### Boot to Ubuntu
 
-Remove the jumper and reboot the machine now. It should give you a login prompt.
+Remove the jumper and reboot the machine now. 
+
+```
+sudo fastboot reboot
+```
+
+It should give you a login prompt.
 
 I recommend having an ethernet cable plugged in for the first boot so that it can pick up the date from the network.
 If you do not it will have a date in 1979 and several things will fail such as SSL certificates.
