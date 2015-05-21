@@ -175,3 +175,9 @@ My default ping requires sudo:
 ```
 sudo chmod u+s `which ping`
 ```
+
+## Networking
+
+In case wireless networking with NetworkManager becomes unreliable, you can just follow these instructions to configure the wireless adapter:
+
+https://wiki.debian.org/WiFi/HowToUse#wpa_supplicant
