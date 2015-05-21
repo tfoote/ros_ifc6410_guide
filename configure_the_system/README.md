@@ -181,3 +181,17 @@ sudo chmod u+s `which ping`
 In case wireless networking with NetworkManager becomes unreliable, you can just follow these instructions to configure the wireless adapter:
 
 https://wiki.debian.org/WiFi/HowToUse#wpa_supplicant
+
+## Add support for the Joystick interface
+
+The `turtlebot_bringup` scripts require `/dev/input/js0` to be present. You can enable the `joydev.ko` module adding the following line to `.config` and recompiling the kernel modules:
+
+`CONFIG_INPUT_JOYDEV=m`
+
+you can also find this module under Device drivers -> Input device support -> Joystick interface in the `menuconfig` menu.
+
+Follow the instructions in the Linaro manual and type the following to build the modules (note the addition of `KERNELRELEASE` to ensure the the `vermagic` matches the rest of the modules shipped with BSP 1.5:
+
+`$ kmake KERNELRELEASE=3.4.0-linaro-ifc6410 all modules`
+
+You can now copy `./drivers/input/joydev.ko` to `/lib/modules/3.4.0-linaro-ifc6410/kernel/drivers/input/joydev.ko` in the `ifc6410` board.
