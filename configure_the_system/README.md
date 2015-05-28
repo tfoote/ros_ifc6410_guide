@@ -126,7 +126,7 @@ sudo mv /usr /usr.bak
 
 #### HARD Reboot!
 
-With usr moved from it's usual place your installation will not operate. You will need to hard powercycle to wait for `/usr` to be remounted on reboot.
+With usr moved from its usual place your installation will not operate. You will need to hard powercycle to wait for `/usr` to be remounted on reboot.
 
 
 Assuming this came up lets clean up the old copy of /usr:
