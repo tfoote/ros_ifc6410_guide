@@ -14,7 +14,7 @@ This is designed as a basic tutorial on how to get going with ROS on the IFC6410
 If you want to do more complicated things we will do our best to link to the upstream resources we used to generate this guide.
 However if you are interested in doing more than is exactly outlined here we suggest that you peruse some of these resources.
 
- * [MyDragonBoard Forums](http://mydragonboard.org/?s=ifc6410)
+ * [Inforce Forums](http://forums.inforcecomputing.com)
  * Linaro builds [14.05](http://releases.linaro.org/14.05/ubuntu/ifc6410) [14.10](http://releases.linaro.org/14.10/ubuntu/ifc6410)
   * Open source builds (still requires binary drivers see Techweb below)
   * 14.05 currently recommended due to SD card issues in 14.10.
